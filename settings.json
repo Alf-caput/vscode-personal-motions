@@ -24,7 +24,6 @@
             "before" : ["Ñ"], "after" : ["<Esc>"]
         },
 
-        
         // Show vscode commands
         {
             "before": ["<leader>", ":"], 
@@ -55,7 +54,7 @@
             "before": ["D"], "after": ["d", "d"]
         },
 
-        // Disable old w
+        // Disable old w and g
         {
             "before": ["w"], "after": [""]
         },
@@ -65,10 +64,16 @@
 
         // Can't have it in pending motions for g (unfortunately)
         {
-            "before": ["g", "k"], "after": ["g", "g", "0"]
+            "before": ["g", "k"], "after": ["g", "g", "^"]
         },
         {
-            "before": ["g", "j"], "after": ["G", "g", "$"]
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
         },
 
         // Normal mode pendings commands that involve gg or G
@@ -128,7 +133,7 @@
             "before": ["G", "L"], "after": ["/"]
         },
         {
-            "before": ["G", "H"], "after": ["/"]
+            "before": ["G", "H"], "after": ["?"]
         },
 
     ],
@@ -143,10 +148,10 @@
 
         // Faster to boundaries command motions
         {
-            "before": ["h"], "after": ["0"]
+            "before": ["h"], "after": ["^"]
         },
         {
-            "before": ["l"], "after": ["g", "$"]
+            "before": ["l"], "after": ["g", "_"]
         },
 
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
@@ -236,6 +241,12 @@
         },
         {
             "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
         },
 
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
