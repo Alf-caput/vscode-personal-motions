@@ -1,0 +1,294 @@
+{
+    // ██╗░░░██╗██╗███╗░░░███╗
+    // ██║░░░██║██║████╗░████║
+    // ╚██╗░██╔╝██║██╔████╔██║
+    // ░╚████╔╝░██║██║╚██╔╝██║
+    // ░░╚██╔╝░░██║██║░╚═╝░██║
+    // ░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
+
+    // █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
+    // ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
+    "vim.useSystemClipboard": true,
+    "vim.leader": "<space>",
+
+    // ███╗░░██╗░█████╗░██████╗░███╗░░░███╗░█████╗░██╗░░░░░
+    // ████╗░██║██╔══██╗██╔══██╗████╗░████║██╔══██╗██║░░░░░
+    // ██╔██╗██║██║░░██║██████╔╝██╔████╔██║███████║██║░░░░░
+    // ██║╚████║██║░░██║██╔══██╗██║╚██╔╝██║██╔══██║██║░░░░░
+    // ██║░╚███║╚█████╔╝██║░░██║██║░╚═╝░██║██║░░██║███████╗
+    // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
+    "vim.normalModeKeyBindings": [
+        
+        // Spanish <Esc>
+        {
+            "before" : ["Ñ"], "after" : ["<Esc>"]
+        },
+
+        
+        // Show vscode commands
+        {
+            "before": ["<leader>", ":"], 
+            "commands": ["workbench.action.showCommands",],
+            "silent": true
+        },
+
+        // Show file explorer
+        {
+            "before": ["<leader>", "e"], 
+            "commands": ["workbench.view.explorer",],
+        },
+        {
+            "before": ["<leader>", "e"], 
+            "commands": ["workbench.action.toggleSidebarVisibility",],
+        },
+
+        // Use vscode undo/redo
+        {
+            "before" : ["u"], "commands" : ["undo"]
+        },
+        {
+            "before" : ["<C-r>"], "commands" : ["redo"]
+        },
+
+        // D same as V or Y
+        {
+            "before": ["D"], "after": ["d", "d"]
+        },
+
+        // Disable old w
+        {
+            "before": ["w"], "after": [""]
+        },
+        {
+            "before": ["W"], "after": [""]
+        },
+
+        // Can't have it in pending motions for g (unfortunately)
+        {
+            "before": ["g", "k"], "after": ["g", "g", "0"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "$"]
+        },
+
+        // Normal mode pendings commands that involve gg or G
+        // Note: Won't work in pending motions by remapping k and j to gg and G
+        {
+            "before": ["y", "g", "k"], "after": ["y", "g", "g"]
+        },
+        {
+            "before": ["y", "g", "j"], "after": ["y", "G"]
+        },
+        {
+            "before": ["d", "g", "k"], "after": ["d", "g", "g"]
+        },
+        {
+            "before": ["d", "g", "j"], "after": ["d", "G"]
+        },
+        {
+            "before": ["c", "g", "k"], "after": ["c", "g", "g"]
+        },
+        {
+            "before": ["c", "g", "j"], "after": ["c", "G"]
+        },
+
+        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+        // w to jump over words or sentences with hjkl motions
+        {
+            "before": ["w", "h"], "after": ["b"]
+        },
+        {
+            "before": ["w", "l"], "after": ["e"]
+        },
+        {
+            "before": ["w", "k"], "after": ["("]
+        },
+        {
+            "before": ["w", "j"], "after": [")"]
+        },
+
+        // W HJKL same behaviour but whitespace is word delimeter
+        // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
+        {
+            "before": ["W", "H"], "after": ["B"]
+        },
+        {
+            "before": ["W", "L"], "after": ["E"]
+        },
+        {
+            "before": ["W", "K"], "after": ["{"]
+        },
+        {
+            "before": ["W", "J"], "after": ["}"]
+        },
+
+        // GL as / and GH as ?
+        {
+            "before": ["G", "L"], "after": ["/"]
+        },
+        {
+            "before": ["G", "H"], "after": ["/"]
+        },
+
+    ],
+
+// ███╗░░░███╗░█████╗░████████╗██╗░█████╗░███╗░░██╗░██████╗
+// ████╗░████║██╔══██╗╚══██╔══╝██║██╔══██╗████╗░██║██╔════╝
+// ██╔████╔██║██║░░██║░░░██║░░░██║██║░░██║██╔██╗██║╚█████╗░
+// ██║╚██╔╝██║██║░░██║░░░██║░░░██║██║░░██║██║╚████║░╚═══██╗
+// ██║░╚═╝░██║╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║██████╔╝
+// ╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝╚═════╝░
+    "vim.operatorPendingModeKeyBindings": [
+
+        // Faster to boundaries command motions
+        {
+            "before": ["h"], "after": ["0"]
+        },
+        {
+            "before": ["l"], "after": ["g", "$"]
+        },
+
+        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+        // w to jump over words or sentences with hjkl motions
+        {
+            "before": ["w", "h"], "after": ["b"]
+        },
+        {
+            "before": ["w", "l"], "after": ["e"]
+        },
+        {
+            "before": ["w", "k"], "after": ["("]
+        },
+        {
+            "before": ["w", "j"], "after": [")"]
+        },
+
+        // W HJKL same behaviour but whitespace is word delimeter
+        // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
+        {
+            "before": ["W", "H"], "after": ["B"]
+        },
+        {
+            "before": ["W", "L"], "after": ["E"]
+        },
+        {
+            "before": ["W", "K"], "after": ["{"]
+        },
+        {
+            "before": ["W", "J"], "after": ["}"]
+        },
+
+        // GL as / and GH as ?
+        {
+            "before": ["G", "L"], "after": ["/"]
+        },
+        {
+            "before": ["G", "H"], "after": ["?"]
+        },
+
+    ],
+
+    // ██╗░░░██╗██╗░██████╗██╗░░░██╗░█████╗░██╗░░░░░
+    // ██║░░░██║██║██╔════╝██║░░░██║██╔══██╗██║░░░░░
+    // ╚██╗░██╔╝██║╚█████╗░██║░░░██║███████║██║░░░░░
+    // ░╚████╔╝░██║░╚═══██╗██║░░░██║██╔══██║██║░░░░░
+    // ░░╚██╔╝░░██║██████╔╝╚██████╔╝██║░░██║███████╗
+    // ░░░╚═╝░░░╚═╝╚═════╝░░╚═════╝░╚═╝░░╚═╝╚══════╝
+    "vim.visualModeKeyBindings": [
+
+        // Spanish <Esc>
+        {
+            "before" : ["Ñ"], "after" : ["<Esc>"]
+        },
+
+        // Paste in visual mode without overriding register
+        {
+            "before": ["p"], "after": ["p", "g", "v", "y"]
+        },
+
+        // g to jump with hjkl as boundaries of file
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
+        },
+        {
+            "before": ["g", "k"], "after": ["g", "g", "^"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+
+        // Disable old w
+        {
+            "before": ["w"], "after": [""]
+        },
+        {
+            "before": ["W"], "after": [""]
+        },
+
+        // Can't have it in pending motions for g (unfortunately)
+        {
+            "before": ["g", "k"], "after": ["g", "g", "^"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+
+        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+        // w to jump over words or sentences with hjkl motions
+        {
+            "before": ["w", "h"], "after": ["b"]
+        },
+        {
+            "before": ["w", "l"], "after": ["e"]
+        },
+        {
+            "before": ["w", "k"], "after": ["("]
+        },
+        {
+            "before": ["w", "j"], "after": [")"]
+        },
+
+        // W HJKL same behaviour but whitespace is word delimeter
+        // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
+        {
+            "before": ["W", "H"], "after": ["B"]
+        },
+        {
+            "before": ["W", "L"], "after": ["E"]
+        },
+        {
+            "before": ["W", "K"], "after": ["{"]
+        },
+        {
+            "before": ["W", "J"], "after": ["}"]
+        },
+
+        // GL as / and GH as ?
+        {
+            "before": ["G", "L"], "after": ["/"]
+        },
+        {
+            "before": ["G", "H"], "after": ["?"]
+        },
+    ],
+
+    // ██╗███╗░░██╗░██████╗███████╗██████╗░████████╗
+    // ██║████╗░██║██╔════╝██╔════╝██╔══██╗╚══██╔══╝
+    // ██║██╔██╗██║╚█████╗░█████╗░░██████╔╝░░░██║░░░
+    // ██║██║╚████║░╚═══██╗██╔══╝░░██╔══██╗░░░██║░░░
+    // ██║██║░╚███║██████╔╝███████╗██║░░██║░░░██║░░░
+    // ╚═╝╚═╝░░╚══╝╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░
+    "vim.insertModeKeyBindings": [
+        
+        // Spanish <Esc>
+        {
+            "before" : ["Ñ"], "after" : ["<Esc>"]
+        },
+    ]
+}
