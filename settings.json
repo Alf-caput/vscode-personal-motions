@@ -6,8 +6,14 @@
     // ░░╚██╔╝░░██║██║░╚═╝░██║
     // ░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝
 
+    // IMPORTANT:
+    // Vscode handles some things different than regular vim:
+    // - While in the end of line search for "\n" will return "\n" of current line
+    // - Others ...
+
     // █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
     // ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
+
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
 
@@ -99,6 +105,7 @@
 
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
         //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+
         // w to jump over words or sentences with hjkl motions
         {
             "before": ["w", "h"], "after": ["b"]
@@ -169,15 +176,22 @@
             "before": ["l"], "after": ["g", "_"]
         },
 
-        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
-        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+        // ▄▀█ █░░ █▀▄▀█ █▀█ █▀ ▀█▀   █▀ ▄▀█ █▀▄▀█ █▀▀
+        // █▀█ █▄▄ █░▀░█ █▄█ ▄█ ░█░   ▄█ █▀█ █░▀░█ ██▄
+        //
+        // █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
+        // █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+
         // w to jump over words or sentences with hjkl motions
         {
             "before": ["w", "h"], "after": ["b"]
         },
+        // Motion to start of word more intuitive when using pending motions
+        // NOT SAME KEYGINDING HERE !!!
         {
-            "before": ["w", "l"], "after": ["e"]
+            "before": ["w", "l"], "after": ["w"]
         },
+        // NOT SAME KEYGINDING HERE !!!
         {
             "before": ["w", "k"], "after": ["("]
         },
@@ -190,9 +204,12 @@
         {
             "before": ["W", "H"], "after": ["B"]
         },
+        // Motion to start of word more intuitive when using pending motions
+        // NOT SAME KEYGINDING HERE !!!
         {
-            "before": ["W", "L"], "after": ["E"]
+            "before": ["W", "L"], "after": ["W"]
         },
+        // NOT SAME KEYGINDING HERE !!!
         {
             "before": ["W", "K"], "after": ["{"]
         },
@@ -281,6 +298,7 @@
 
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
         //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+
         // w to jump over words or sentences with hjkl motions
         {
             "before": ["w", "h"], "after": ["b"]
