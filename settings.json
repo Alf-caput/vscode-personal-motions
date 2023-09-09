@@ -64,20 +64,9 @@
         // Show file explorer
         {
             "before": ["<leader>", "e"], 
-            "commands": ["workbench.view.explorer",],
+            "commands": ["workbench.open.explorer"],
         },
-        {
-            "before": ["<leader>", "e"], 
-            "commands": ["workbench.action.toggleSidebarVisibility",],
-        },
-
-        // Show vscode commands
-        {
-            "before": ["<leader>", ":"], 
-            "commands": ["workbench.action.showCommands",],
-            "silent": true
-        },
-
+        
         // █░█ █ █▀▄▀█   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
         // ▀▄▀ █ █░▀░█   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
 
