@@ -25,6 +25,17 @@
     // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
     "vim.normalModeKeyBindings": [
 
+        // Vscode tab
+        {
+            "before": ["<tab>"], 
+            "commands": ["tab",],
+            "silent": true
+        },
+        {
+            "before": ["shift", "<tab>"], 
+            "commands": ["outdent",],
+            "silent": true
+        },
 
         // Spanish <Esc>
         {
@@ -250,6 +261,18 @@
     // ░░╚██╔╝░░██║██████╔╝╚██████╔╝██║░░██║███████╗
     // ░░░╚═╝░░░╚═╝╚═════╝░░╚═════╝░╚═╝░░╚═╝╚══════╝
     "vim.visualModeKeyBindings": [
+
+        // Vscode tab
+        {
+            "before": ["<tab>"], 
+            "commands": ["tab",],
+            "silent": true
+        },
+        {
+            "before": ["shift", "<tab>"], 
+            "commands": ["outdent",],
+            "silent": true
+        },
 
         // Spanish <Esc>
         {
