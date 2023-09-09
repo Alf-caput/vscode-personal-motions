@@ -25,6 +25,13 @@
     // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
     "vim.normalModeKeyBindings": [
 
+        // Comment
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+
         // Vscode tab
         {
             "before": ["<tab>"], 
@@ -260,7 +267,14 @@
     // ░╚████╔╝░██║░╚═══██╗██║░░░██║██╔══██║██║░░░░░
     // ░░╚██╔╝░░██║██████╔╝╚██████╔╝██║░░██║███████╗
     // ░░░╚═╝░░░╚═╝╚═════╝░░╚═════╝░╚═╝░░╚═╝╚══════╝
-    "vim.visualModeKeyBindings": [
+    "vim.visualModeKeyBindingsNonRecursive": [
+
+        // Comment
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"],
+            "when": "editorTextFocus && !editorReadonly"
+        },
 
         // Vscode tab
         {
@@ -318,6 +332,11 @@
         },
         {
             "before": ["g", "l"], "after": ["g", "_"]
+        },
+
+        // Better yanking
+        {
+            "before": ["y"], "after": ["y", "g", "v", "<Esc>"]
         },
 
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
