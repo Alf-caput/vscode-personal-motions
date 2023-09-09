@@ -23,8 +23,10 @@
     // ██║╚████║██║░░██║██╔══██╗██║╚██╔╝██║██╔══██║██║░░░░░
     // ██║░╚███║╚█████╔╝██║░░██║██║░╚═╝░██║██║░░██║███████╗
     // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
-    "vim.normalModeKeyBindings": [
+    "vim.normalModeKeyBindingsNonRecursive": [
 
+█▀▀ ▀▄▀ █▀▀ █░░ █░█ █▀ █ █░█ █▀▀   █▀ █▀▀ ▀█▀ ▀█▀ █ █▄░█ █▀▀ █▀
+██▄ █░█ █▄▄ █▄▄ █▄█ ▄█ █ ▀▄▀ ██▄   ▄█ ██▄ ░█░ ░█░ █ █░▀█ █▄█ ▄█
         // Comment
         {
             "before": ["<leader>", "c"],
@@ -101,27 +103,6 @@
             "before": ["g", "l"], "after": ["g", "_"]
         },
 
-        // Normal mode pendings commands that involve gg or G
-        // Note: Won't work in pending motions by remapping k and j to gg and G
-        {
-            "before": ["y", "g", "k"], "after": ["y", "g", "g"]
-        },
-        {
-            "before": ["y", "g", "j"], "after": ["y", "G"]
-        },
-        {
-            "before": ["d", "g", "k"], "after": ["d", "g", "g"]
-        },
-        {
-            "before": ["d", "g", "j"], "after": ["d", "G"]
-        },
-        {
-            "before": ["c", "g", "k"], "after": ["c", "g", "g"]
-        },
-        {
-            "before": ["c", "g", "j"], "after": ["c", "G"]
-        },
-
         //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
         //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
 
@@ -195,6 +176,24 @@
             "before": ["l"], "after": ["g", "_"]
         },
 
+        // j and k are reserved for vim classic command use
+
+        // Can't use composition when using g after command
+        // gh and gl differ from normal mode because h and l
+        // already covers them
+        {
+            "before": ["g", "h"], "after": ["0"]
+        },              
+        {               
+            "before": ["g", "l"], "after": ["$"]
+        },              
+        {               
+            "before": ["g", "k"], "after": ["g", "g"]
+        },              
+        {               
+            "before": ["g", "j"], "after": ["G"]
+        },
+
         // ▄▀█ █░░ █▀▄▀█ █▀█ █▀ ▀█▀   █▀ ▄▀█ █▀▄▀█ █▀▀
         // █▀█ █▄▄ █░▀░█ █▄█ ▄█ ░█░   ▄█ █▀█ █░▀░█ ██▄
         //
@@ -224,11 +223,11 @@
             "before": ["W", "H"], "after": ["B"]
         },
         // Motion to start of word more intuitive when using pending motions
-        // NOT SAME KEYGINDING HERE !!!
+        // NOT SAME KEYBINDING HERE !!!
         {
             "before": ["W", "L"], "after": ["W"]
         },
-        // NOT SAME KEYGINDING HERE !!!
+        // NOT SAME KEYBINDING HERE !!!
         {
             "before": ["W", "K"], "after": ["{"]
         },
@@ -296,20 +295,6 @@
         // Paste in visual mode without overriding register
         {
             "before": ["p"], "after": ["p", "g", "v", "y"]
-        },
-
-        // g to jump with hjkl as boundaries of file
-        {
-            "before": ["g", "h"], "after": ["^"]
-        },
-        {
-            "before": ["g", "l"], "after": ["g", "_"]
-        },
-        {
-            "before": ["g", "k"], "after": ["g", "g", "^"]
-        },
-        {
-            "before": ["g", "j"], "after": ["G", "g", "_"]
         },
 
         // Disable old w
@@ -408,5 +393,6 @@
         {
             "before" : ["Ñ"], "after" : ["<Esc>"]
         },
-    ]
+    ],
+    "workbench.activityBar.visible": false
 }
