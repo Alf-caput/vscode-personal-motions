@@ -24,7 +24,8 @@
     // ██║░╚███║╚█████╔╝██║░░██║██║░╚═╝░██║██║░░██║███████╗
     // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
     "vim.normalModeKeyBindings": [
-        
+
+
         // Spanish <Esc>
         {
             "before" : ["Ñ"], "after" : ["<Esc>"]
@@ -166,7 +167,7 @@
 // ██║╚██╔╝██║██║░░██║░░░██║░░░██║██║░░██║██║╚████║░╚═══██╗
 // ██║░╚═╝░██║╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║██████╔╝
 // ╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝╚═════╝░
-    "vim.operatorPendingModeKeyBindings": [
+    "vim.operatorPendingModeKeyBindingsNonRecursive": [
 
         // Faster to boundaries command motions
         {
@@ -187,11 +188,11 @@
             "before": ["w", "h"], "after": ["b"]
         },
         // Motion to start of word more intuitive when using pending motions
-        // NOT SAME KEYGINDING HERE !!!
+        // NOT SAME KEYBINDING HERE !!!
         {
             "before": ["w", "l"], "after": ["w"]
         },
-        // NOT SAME KEYGINDING HERE !!!
+        // NOT SAME KEYBINDING HERE !!!
         {
             "before": ["w", "k"], "after": ["("]
         },
