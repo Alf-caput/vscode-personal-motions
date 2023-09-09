@@ -61,6 +61,13 @@
             "silent": true
         },
 
+        // Show vscode commands
+        {
+            "before": ["<leader>", ":"], 
+            "commands": ["workbench.action.showCommands",],
+            "silent": true
+        },
+
         // █░█ █ █▀▄▀█   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
         // ▀▄▀ █ █░▀░█   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
 
@@ -319,16 +326,6 @@
             "before": ["shift", "<tab>"], 
             "commands": ["outdent",],
             "silent": true
-        },
-
-        // Show file explorer
-        {
-            "before": ["<leader>", "e"], 
-            "commands": ["workbench.view.explorer",],
-        },
-        {
-            "before": ["<leader>", "e"], 
-            "commands": ["workbench.action.toggleSidebarVisibility",],
         },
 
         // Show vscode commands
