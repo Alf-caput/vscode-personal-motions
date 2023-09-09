@@ -61,12 +61,6 @@
             "silent": true
         },
 
-        // Show file explorer
-        {
-            "before": ["<leader>", "e"], 
-            "commands": ["workbench.open.explorer"],
-        },
-        
         // █░█ █ █▀▄▀█   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
         // ▀▄▀ █ █░▀░█   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
 
