@@ -128,12 +128,27 @@
             "before": ["W", "J"], "after": ["}"]
         },
 
-        // GL as / and GH as ?
+        // fl as f and fh as F
         {
-            "before": ["G", "L"], "after": ["/"]
+            "before": ["f", "l"], "after": ["f"]
         },
         {
-            "before": ["G", "H"], "after": ["?"]
+            "before": ["f", "h"], "after": ["F"]
+        },
+        // fj as / and fk as ?
+        {
+            "before": ["f", "j"], "after": ["/"]
+        },
+        {
+            "before": ["f", "k"], "after": ["?"]
+        },
+
+        // tl as t and th as T
+        {
+            "before": ["t", "l"], "after": ["t"]
+        },
+        {
+            "before": ["t", "h"], "after": ["T"]
         },
 
     ],
@@ -185,12 +200,27 @@
             "before": ["W", "J"], "after": ["}"]
         },
 
-        // GL as / and GH as ?
+        // fl as f and fh as F
         {
-            "before": ["G", "L"], "after": ["/"]
+            "before": ["f", "l"], "after": ["f"]
         },
         {
-            "before": ["G", "H"], "after": ["?"]
+            "before": ["f", "h"], "after": ["F"]
+        },
+        // fj as / and fk as ?
+        {
+            "before": ["f", "j"], "after": ["/"]
+        },
+        {
+            "before": ["f", "k"], "after": ["?"]
+        },
+
+        // tl as t and th as T
+        {
+            "before": ["t", "l"], "after": ["t"]
+        },
+        {
+            "before": ["t", "h"], "after": ["T"]
         },
 
     ],
@@ -280,13 +310,29 @@
             "before": ["W", "J"], "after": ["}"]
         },
 
-        // GL as / and GH as ?
+        // fl as f and fh as F
         {
-            "before": ["G", "L"], "after": ["/"]
+            "before": ["f", "l"], "after": ["f"]
         },
         {
-            "before": ["G", "H"], "after": ["?"]
+            "before": ["f", "h"], "after": ["F"]
         },
+        // fj as / and fk as ?
+        {
+            "before": ["f", "j"], "after": ["/"]
+        },
+        {
+            "before": ["f", "k"], "after": ["?"]
+        },
+
+        // tl as t and th as T
+        {
+            "before": ["t", "l"], "after": ["t"]
+        },
+        {
+            "before": ["t", "h"], "after": ["T"]
+        },
+
     ],
 
     // ██╗███╗░░██╗░██████╗███████╗██████╗░████████╗
