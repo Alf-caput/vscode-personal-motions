@@ -83,4 +83,14 @@
         "command": "-workbench.view.explorer",
         "when": "viewContainer.workbench.view.explorer.enabled"
     },
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when" : "sideBarFocus"
+    },
+    {
+        "key": "A",
+        "command": "explorer.newFolder",
+        "when" : "sideBarFocus"
+    },
 ]
