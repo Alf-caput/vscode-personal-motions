@@ -25,6 +25,23 @@
     // ╚═╝░░╚══╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝╚══════╝
     "vim.normalModeKeyBindingsNonRecursive": [
 
+        // █░█ █▀ █▀▀ █▀█ █▀▄ █▀▀   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
+        // ▀▄▀ ▄█ █▄▄ █▄█ █▄▀ ██▄   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
+
+        // Use vscode undo/redo
+        {
+            "before" : ["u"], "commands" : ["undo"]
+        },
+        {
+            "before" : ["<C-r>"], "commands" : ["redo"]
+        },
+
+        // █░█ █▀ █▀▀ █▀█ █▀▄ █▀▀   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
+        // ▀▄▀ ▄█ █▄▄ █▄█ █▄▀ ██▄   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
+
+        // Common keybindings with normal mode
+        // Conflicts with current mode are commented
+
         // Comment
         {
             "before": ["<leader>", "c"],
@@ -41,18 +58,6 @@
         {
             "before": ["shift", "<tab>"], 
             "commands": ["outdent",],
-            "silent": true
-        },
-
-        // Spanish <Esc>
-        {
-            "before" : ["Ñ"], "after" : ["<Esc>"]
-        },
-
-        // Show vscode commands
-        {
-            "before": ["<leader>", ":"], 
-            "commands": ["workbench.action.showCommands",],
             "silent": true
         },
 
@@ -66,20 +71,28 @@
             "commands": ["workbench.action.toggleSidebarVisibility",],
         },
 
-        // Use vscode undo/redo
+        // Show vscode commands
         {
-            "before" : ["u"], "commands" : ["undo"]
+            "before": ["<leader>", ":"], 
+            "commands": ["workbench.action.showCommands",],
+            "silent": true
         },
-        {
-            "before" : ["<C-r>"], "commands" : ["redo"]
-        },
+
+        // █░█ █ █▀▄▀█   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
+        // ▀▄▀ █ █░▀░█   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
 
         // D same as V or Y
         {
             "before": ["D"], "after": ["d", "d"]
         },
 
-        // Disable old w and g
+        // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
+        // ▀▄▀ █ █░▀░█   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
+
+        // Common keybindings with normal mode
+        // Conflicts with current mode are commented
+
+        // Disable old w and W
         {
             "before": ["w"], "after": [""]
         },
@@ -87,22 +100,10 @@
             "before": ["W"], "after": [""]
         },
 
-        // Can't have it in pending motions for g (unfortunately)
+        // Spanish <Esc>
         {
-            "before": ["g", "k"], "after": ["g", "g", "^"]
+            "before" : ["Ñ"], "after" : ["<Esc>"]
         },
-        {
-            "before": ["g", "j"], "after": ["G", "g", "_"]
-        },
-        {
-            "before": ["g", "h"], "after": ["^"]
-        },
-        {
-            "before": ["g", "l"], "after": ["g", "_"]
-        },
-
-        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
-        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
 
         // w to jump over words or sentences with hjkl motions
         {
@@ -156,6 +157,20 @@
             "before": ["t", "h"], "after": ["T"]
         },
 
+        // Go to boundaries with g hjkl
+        {
+            "before": ["g", "k"], "after": ["g", "g", "^"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
+        },
+
     ],
 
 // ███╗░░░███╗░█████╗░████████╗██╗░█████╗░███╗░░██╗░██████╗
@@ -165,6 +180,9 @@
 // ██║░╚═╝░██║╚█████╔╝░░░██║░░░██║╚█████╔╝██║░╚███║██████╔╝
 // ╚═╝░░░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░╚════╝░╚═╝░░╚══╝╚═════╝░
     "vim.operatorPendingModeKeyBindingsNonRecursive": [
+
+        // █░█ █ █▀▄▀█   █▀█ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀
+        // ▀▄▀ █ █░▀░█   █▀▀ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█
 
         // Faster to boundaries command motions
         {
@@ -176,7 +194,13 @@
 
         // j and k are reserved for vim classic command use
 
-        // Can't use composition when using g after command
+        // █░█ █ █▀▄▀█   █▀▄ █ █▀▀ █▀▀ █▀▀ █▀█ █▀
+        // ▀▄▀ █ █░▀░█   █▄▀ █ █▀░ █▀░ ██▄ █▀▄ ▄█
+
+        // Disabling w not required in this mode
+
+        // <Esc> keybinding not required in this mode
+
         // gh and gl differ from normal mode because h and l
         // already covers them
         {
@@ -185,29 +209,41 @@
         {               
             "before": ["g", "l"], "after": ["$"]
         },              
-        {               
-            "before": ["g", "k"], "after": ["g", "g"]
-        },              
-        {               
-            "before": ["g", "j"], "after": ["G"]
+
+        // Motion to start of word more intuitive when using pending motions
+        {
+            "before": ["w", "l"], "after": ["w"]
+        },
+        {
+            "before": ["W", "L"], "after": ["W"]
         },
 
-        // ▄▀█ █░░ █▀▄▀█ █▀█ █▀ ▀█▀   █▀ ▄▀█ █▀▄▀█ █▀▀
-        // █▀█ █▄▄ █░▀░█ █▄█ ▄█ ░█░   ▄█ █▀█ █░▀░█ ██▄
-        //
-        // █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
-        // █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
+        // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
+        // ▀▄▀ █ █░▀░█   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
+
+        // Common keybindings with normal mode
+        // Conflicts with current mode are commented
+
+        // Disable old w and W
+        // {
+        //     "before": ["w"], "after": [""]
+        // },
+        // {
+        //     "before": ["W"], "after": [""]
+        // },
+
+        // // Spanish <Esc>
+        // {
+        //     "before" : ["Ñ"], "after" : ["<Esc>"]
+        // },
 
         // w to jump over words or sentences with hjkl motions
         {
             "before": ["w", "h"], "after": ["b"]
         },
-        // Motion to start of word more intuitive when using pending motions
-        // NOT SAME KEYBINDING HERE !!!
-        {
-            "before": ["w", "l"], "after": ["w"]
-        },
-        // NOT SAME KEYBINDING HERE !!!
+        // {
+        //     "before": ["w", "l"], "after": ["e"]
+        // },
         {
             "before": ["w", "k"], "after": ["("]
         },
@@ -220,12 +256,9 @@
         {
             "before": ["W", "H"], "after": ["B"]
         },
-        // Motion to start of word more intuitive when using pending motions
-        // NOT SAME KEYBINDING HERE !!!
-        {
-            "before": ["W", "L"], "after": ["W"]
-        },
-        // NOT SAME KEYBINDING HERE !!!
+        // {
+        //     "before": ["W", "L"], "after": ["E"]
+        // },
         {
             "before": ["W", "K"], "after": ["{"]
         },
@@ -256,6 +289,20 @@
             "before": ["t", "h"], "after": ["T"]
         },
 
+        // Go to boundaries with g hjkl
+        {
+            "before": ["g", "k"], "after": ["g", "g", "^"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+        // {
+        //     "before": ["g", "h"], "after": ["^"]
+        // },
+        // {
+        //     "before": ["g", "l"], "after": ["g", "_"]
+        // },
+
     ],
 
     // ██╗░░░██╗██╗░██████╗██╗░░░██╗░█████╗░██╗░░░░░
@@ -265,6 +312,12 @@
     // ░░╚██╔╝░░██║██████╔╝╚██████╔╝██║░░██║███████╗
     // ░░░╚═╝░░░╚═╝╚═════╝░░╚═════╝░╚═╝░░╚═╝╚══════╝
     "vim.visualModeKeyBindingsNonRecursive": [
+
+        // █░█ █▀ █▀▀ █▀█ █▀▄ █▀▀   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
+        // ▀▄▀ ▄█ █▄▄ █▄█ █▄▀ ██▄   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
+
+        // Common keybindings with normal mode
+        // Conflicts with current mode are commented
 
         // Comment
         {
@@ -285,17 +338,43 @@
             "silent": true
         },
 
-        // Spanish <Esc>
+        // Show file explorer
         {
-            "before" : ["Ñ"], "after" : ["<Esc>"]
+            "before": ["<leader>", "e"], 
+            "commands": ["workbench.view.explorer",],
         },
+        {
+            "before": ["<leader>", "e"], 
+            "commands": ["workbench.action.toggleSidebarVisibility",],
+        },
+
+        // Show vscode commands
+        {
+            "before": ["<leader>", ":"], 
+            "commands": ["workbench.action.showCommands",],
+            "silent": true
+        },
+
+        // █░█ █ █▀▄▀█   █░█ █ █▀ █░█ ▄▀█ █░░
+        // ▀▄▀ █ █░▀░█   ▀▄▀ █ ▄█ █▄█ █▀█ █▄▄
 
         // Paste in visual mode without overriding register
         {
             "before": ["p"], "after": ["p", "g", "v", "y"]
         },
+        
+        // Better yanking
+        {
+            "before": ["y"], "after": ["y", "g", "v", "<Esc>"]
+        },
+        
+        // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
+        // ▀▄▀ █ █░▀░█   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
 
-        // Disable old w
+        // Common keybindings with normal mode
+        // Conflicts with current mode are commented
+
+        // Disable old w and W
         {
             "before": ["w"], "after": [""]
         },
@@ -303,27 +382,10 @@
             "before": ["W"], "after": [""]
         },
 
-        // Can't have it in pending motions for g (unfortunately)
+        // Spanish <Esc>
         {
-            "before": ["g", "k"], "after": ["g", "g", "^"]
+            "before" : ["Ñ"], "after" : ["<Esc>"]
         },
-        {
-            "before": ["g", "j"], "after": ["G", "g", "_"]
-        },
-        {
-            "before": ["g", "h"], "after": ["^"]
-        },
-        {
-            "before": ["g", "l"], "after": ["g", "_"]
-        },
-
-        // Better yanking
-        {
-            "before": ["y"], "after": ["y", "g", "v", "<Esc>"]
-        },
-
-        //█▀ ▄▀█ █▀▄▀█ █▀▀   █▄▀ █▀▀ █▄█ █▄▄ █ █▄░█ █▀▄ █ █▄░█ █▀▀ █▀
-        //▄█ █▀█ █░▀░█ ██▄   █░█ ██▄ ░█░ █▄█ █ █░▀█ █▄▀ █ █░▀█ █▄█ ▄█
 
         // w to jump over words or sentences with hjkl motions
         {
@@ -375,6 +437,20 @@
         },
         {
             "before": ["t", "h"], "after": ["T"]
+        },
+
+        // Go to boundaries with g hjkl
+        {
+            "before": ["g", "k"], "after": ["g", "g", "^"]
+        },
+        {
+            "before": ["g", "j"], "after": ["G", "g", "_"]
+        },
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
         },
 
     ],
@@ -392,5 +468,15 @@
             "before" : ["Ñ"], "after" : ["<Esc>"]
         },
     ],
+
+    // ██╗░░░░░░█████╗░░██████╗████████╗  ░█████╗░██████╗░██████╗░███████╗██████╗░
+    // ██║░░░░░██╔══██╗██╔════╝╚══██╔══╝  ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+    // ██║░░░░░███████║╚█████╗░░░░██║░░░  ███████║██║░░██║██║░░██║█████╗░░██║░░██║
+    // ██║░░░░░██╔══██║░╚═══██╗░░░██║░░░  ██╔══██║██║░░██║██║░░██║██╔══╝░░██║░░██║
+    // ███████╗██║░░██║██████╔╝░░░██║░░░  ██║░░██║██████╔╝██████╔╝███████╗██████╔╝
+    // ╚══════╝╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░  ╚═╝░░╚═╝╚═════╝░╚═════╝░╚══════╝╚═════╝░
+
+    // More settings appended by vscode
+
     "workbench.activityBar.visible": false
 }
