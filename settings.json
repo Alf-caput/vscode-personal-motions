@@ -16,6 +16,7 @@
 
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
+    "editor.wordSeparators": "~!@#$%^&*()-=+{}|;:'\",.<>/?",
 
     // ███╗░░██╗░█████╗░██████╗░███╗░░░███╗░█████╗░██╗░░░░░
     // ████╗░██║██╔══██╗██╔══██╗████╗░████║██╔══██╗██║░░░░░
@@ -57,23 +58,26 @@
         },
         {
             "before": ["shift", "<tab>"], 
-            "commands": ["outdent",],
+            "commands": ["outdent"],
             "silent": true
         },
 
         // Show vscode commands
         {
             "before": ["<leader>", ":"], 
-            "commands": ["workbench.action.showCommands",],
+            "commands": ["workbench.action.showCommands"],
             "silent": true
         },
 
         // █░█ █ █▀▄▀█   █▄░█ █▀█ █▀█ █▀▄▀█ ▄▀█ █░░
         // ▀▄▀ █ █░▀░█   █░▀█ █▄█ █▀▄ █░▀░█ █▀█ █▄▄
 
-        // D same as V or Y
+        // D and C same as V and Y
         {
             "before": ["D"], "after": ["d", "d"]
+        },
+        {
+            "before": ["C"], "after": ["c", "c"]
         },
 
         // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
@@ -81,14 +85,6 @@
 
         // Common keybindings with normal mode
         // Conflicts with current mode are commented
-
-        // Disable old w and W
-        {
-            "before": ["w"], "after": [""]
-        },
-        {
-            "before": ["W"], "after": [""]
-        },
 
         // Spanish <Esc>
         {
@@ -108,7 +104,18 @@
         {
             "before": ["w", "j"], "after": [")"]
         },
-
+        {
+            "before": ["w", "H"], "after": ["b"]
+        },
+        {
+            "before": ["w", "L"], "after": ["e"]
+        },
+        {
+            "before": ["w", "K"], "after": ["("]
+        },
+        {
+            "before": ["w", "J"], "after": [")"]
+        },
         // W HJKL same behaviour but whitespace is word delimeter
         // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
         {
@@ -118,10 +125,29 @@
             "before": ["W", "L"], "after": ["E"]
         },
         {
-            "before": ["W", "K"], "after": ["{"]
+            "before": ["W", "K"], "after": ["{"], 
         },
         {
             "before": ["W", "J"], "after": ["}"]
+        },
+        {
+            "before": ["W", "h"], "after": ["B"]
+        },
+        {
+            "before": ["W", "l"], "after": ["E"]
+        },
+        {
+            "before": ["W", "k"], "after": ["{"], 
+        },
+        {
+            "before": ["W", "j"], "after": ["}"]
+        },
+        // Disable old w and W
+        {
+            "before": ["w"], "after": [""]
+        },
+        {
+            "before": ["W"], "after": [""]
         },
 
         // fl as f and fh as F
@@ -131,20 +157,59 @@
         {
             "before": ["f", "h"], "after": ["F"]
         },
-        // fj as / and fk as ?
         {
-            "before": ["f", "j"], "after": ["/"]
+            "before": ["f", "L"], "after": ["f"]
         },
         {
-            "before": ["f", "k"], "after": ["?"]
+            "before": ["f", "H"], "after": ["F"]
+        },
+        // Fh as / and Fl as ?
+        {
+            "before": ["F", "l"], "after": ["/"]
+        },
+        {
+            "before": ["F", "h"], "after": ["?"]
+        },
+        {
+            "before": ["F", "L"], "after": ["/"]
+        },
+        {
+            "before": ["F", "H"], "after": ["?"]
+        },
+        // Disable old f and F
+        {
+            "before": ["f"], "after": [""]
+        },
+        {
+            "before": ["F"], "after": [""]
         },
 
-        // tl as t and th as T
+        // tl as t
         {
             "before": ["t", "l"], "after": ["t"]
         },
         {
+            "before": ["T", "l"], "after": ["t"]
+        },
+        {
+            "before": ["T", "L"], "after": ["t"]
+        },
+        // th as T
+        {
             "before": ["t", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "H"], "after": ["T"]
+        },
+        // Disable old t and T
+        {
+            "before": ["t"], "after": [""]
+        },
+        {
+            "before": ["T"], "after": [""]
         },
 
         // Go to boundaries with g hjkl
@@ -174,38 +239,26 @@
         // █░█ █ █▀▄▀█   █▀█ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀
         // ▀▄▀ █ █░▀░█   █▀▀ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█
 
-        // Faster to boundaries command motions
+        // One character
         {
-            "before": ["h"], "after": ["^"]
+            "before": ["x"], "after": ["l"]
         },
         {
-            "before": ["l"], "after": ["g", "_"]
+            "before": ["X"], "after": ["i", "i"]
         },
 
-        // j and k are reserved for vim classic command use
-
-        // █░█ █ █▀▄▀█   █▀▄ █ █▀▀ █▀▀ █▀▀ █▀█ █▀
-        // ▀▄▀ █ █░▀░█   █▄▀ █ █▀░ █▀░ ██▄ █▀▄ ▄█
-
-        // Disabling w not required in this mode
-
-        // <Esc> keybinding not required in this mode
-
-        // gh and gl differ from normal mode because h and l
-        // already covers them
+        // More intuitive motions
         {
-            "before": ["g", "h"], "after": ["0"]
-        },              
-        {               
-            "before": ["g", "l"], "after": ["$"]
-        },              
-
-        // Motion to start of word more intuitive when using pending motions
-        {
-            "before": ["w", "l"], "after": ["w"]
+            "before": ["h"], "after": ["b"]
         },
         {
-            "before": ["W", "L"], "after": ["W"]
+            "before": ["l"], "after": ["w"]
+        },
+        {
+            "before": ["H"], "after": ["B"]
+        },
+        {
+            "before": ["L"], "after": ["W"]
         },
 
         // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
@@ -214,46 +267,68 @@
         // Common keybindings with normal mode
         // Conflicts with current mode are commented
 
-        // Disable old w and W
-        // {
-        //     "before": ["w"], "after": [""]
-        // },
-        // {
-        //     "before": ["W"], "after": [""]
-        // },
-
-        // // Spanish <Esc>
-        // {
-        //     "before" : ["Ñ"], "after" : ["<Esc>"]
-        // },
+        // Spanish <Esc>
+        {
+            "before" : ["Ñ"], "after" : ["<Esc>"]
+        },
 
         // w to jump over words or sentences with hjkl motions
         {
             "before": ["w", "h"], "after": ["b"]
         },
-        // {
-        //     "before": ["w", "l"], "after": ["e"]
-        // },
+        {
+            "before": ["w", "l"], "after": ["e"]
+        },
         {
             "before": ["w", "k"], "after": ["("]
         },
         {
             "before": ["w", "j"], "after": [")"]
         },
-
+        {
+            "before": ["w", "H"], "after": ["b"]
+        },
+        {
+            "before": ["w", "L"], "after": ["e"]
+        },
+        {
+            "before": ["w", "K"], "after": ["("]
+        },
+        {
+            "before": ["w", "J"], "after": [")"]
+        },
         // W HJKL same behaviour but whitespace is word delimeter
         // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
         {
             "before": ["W", "H"], "after": ["B"]
         },
-        // {
-        //     "before": ["W", "L"], "after": ["E"]
-        // },
         {
-            "before": ["W", "K"], "after": ["{"]
+            "before": ["W", "L"], "after": ["E"]
+        },
+        {
+            "before": ["W", "K"], "after": ["{"], 
         },
         {
             "before": ["W", "J"], "after": ["}"]
+        },
+        {
+            "before": ["W", "h"], "after": ["B"]
+        },
+        {
+            "before": ["W", "l"], "after": ["E"]
+        },
+        {
+            "before": ["W", "k"], "after": ["{"], 
+        },
+        {
+            "before": ["W", "j"], "after": ["}"]
+        },
+        // Disable old w and W
+        {
+            "before": ["w"], "after": [""]
+        },
+        {
+            "before": ["W"], "after": [""]
         },
 
         // fl as f and fh as F
@@ -263,20 +338,59 @@
         {
             "before": ["f", "h"], "after": ["F"]
         },
-        // fj as / and fk as ?
         {
-            "before": ["f", "j"], "after": ["/"]
+            "before": ["f", "L"], "after": ["f"]
         },
         {
-            "before": ["f", "k"], "after": ["?"]
+            "before": ["f", "H"], "after": ["F"]
+        },
+        // Fh as / and Fl as ?
+        {
+            "before": ["F", "l"], "after": ["/"]
+        },
+        {
+            "before": ["F", "h"], "after": ["?"]
+        },
+        {
+            "before": ["F", "L"], "after": ["/"]
+        },
+        {
+            "before": ["F", "H"], "after": ["?"]
+        },
+        // Disable old f and F
+        {
+            "before": ["f"], "after": [""]
+        },
+        {
+            "before": ["F"], "after": [""]
         },
 
-        // tl as t and th as T
+        // tl as t
         {
             "before": ["t", "l"], "after": ["t"]
         },
         {
+            "before": ["T", "l"], "after": ["t"]
+        },
+        {
+            "before": ["T", "L"], "after": ["t"]
+        },
+        // th as T
+        {
             "before": ["t", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "H"], "after": ["T"]
+        },
+        // Disable old t and T
+        {
+            "before": ["t"], "after": [""]
+        },
+        {
+            "before": ["T"], "after": [""]
         },
 
         // Go to boundaries with g hjkl
@@ -286,12 +400,12 @@
         {
             "before": ["g", "j"], "after": ["G", "g", "_"]
         },
-        // {
-        //     "before": ["g", "h"], "after": ["^"]
-        // },
-        // {
-        //     "before": ["g", "l"], "after": ["g", "_"]
-        // },
+        {
+            "before": ["g", "h"], "after": ["^"]
+        },
+        {
+            "before": ["g", "l"], "after": ["g", "_"]
+        },
 
     ],
 
@@ -354,14 +468,6 @@
         // Common keybindings with normal mode
         // Conflicts with current mode are commented
 
-        // Disable old w and W
-        {
-            "before": ["w"], "after": [""]
-        },
-        {
-            "before": ["W"], "after": [""]
-        },
-
         // Spanish <Esc>
         {
             "before" : ["Ñ"], "after" : ["<Esc>"]
@@ -380,7 +486,18 @@
         {
             "before": ["w", "j"], "after": [")"]
         },
-
+        {
+            "before": ["w", "H"], "after": ["b"]
+        },
+        {
+            "before": ["w", "L"], "after": ["e"]
+        },
+        {
+            "before": ["w", "K"], "after": ["("]
+        },
+        {
+            "before": ["w", "J"], "after": [")"]
+        },
         // W HJKL same behaviour but whitespace is word delimeter
         // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
         {
@@ -390,10 +507,29 @@
             "before": ["W", "L"], "after": ["E"]
         },
         {
-            "before": ["W", "K"], "after": ["{"]
+            "before": ["W", "K"], "after": ["{"], 
         },
         {
             "before": ["W", "J"], "after": ["}"]
+        },
+        {
+            "before": ["W", "h"], "after": ["B"]
+        },
+        {
+            "before": ["W", "l"], "after": ["E"]
+        },
+        {
+            "before": ["W", "k"], "after": ["{"], 
+        },
+        {
+            "before": ["W", "j"], "after": ["}"]
+        },
+        // Disable old w and W
+        {
+            "before": ["w"], "after": [""]
+        },
+        {
+            "before": ["W"], "after": [""]
         },
 
         // fl as f and fh as F
@@ -403,20 +539,59 @@
         {
             "before": ["f", "h"], "after": ["F"]
         },
-        // fj as / and fk as ?
         {
-            "before": ["f", "j"], "after": ["/"]
+            "before": ["f", "L"], "after": ["f"]
         },
         {
-            "before": ["f", "k"], "after": ["?"]
+            "before": ["f", "H"], "after": ["F"]
+        },
+        // Fh as / and Fl as ?
+        {
+            "before": ["F", "l"], "after": ["/"]
+        },
+        {
+            "before": ["F", "h"], "after": ["?"]
+        },
+        {
+            "before": ["F", "L"], "after": ["/"]
+        },
+        {
+            "before": ["F", "H"], "after": ["?"]
+        },
+        // Disable old f and F
+        {
+            "before": ["f"], "after": [""]
+        },
+        {
+            "before": ["F"], "after": [""]
         },
 
-        // tl as t and th as T
+        // tl as t
         {
             "before": ["t", "l"], "after": ["t"]
         },
         {
+            "before": ["T", "l"], "after": ["t"]
+        },
+        {
+            "before": ["T", "L"], "after": ["t"]
+        },
+        // th as T
+        {
             "before": ["t", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "h"], "after": ["T"]
+        },
+        {
+            "before": ["T", "H"], "after": ["T"]
+        },
+        // Disable old t and T
+        {
+            "before": ["t"], "after": [""]
+        },
+        {
+            "before": ["T"], "after": [""]
         },
 
         // Go to boundaries with g hjkl
