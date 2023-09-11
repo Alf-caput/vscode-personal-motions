@@ -255,10 +255,22 @@
             "before": ["l"], "after": ["w"]
         },
         {
+            "before": ["j"], "after": [")"]
+        },
+        {
+            "before": ["k"], "after": ["("]
+        },
+        {
             "before": ["H"], "after": ["B"]
         },
         {
             "before": ["L"], "after": ["W"]
+        },
+        {
+            "before": ["J"], "after": ["}"]
+        },
+        {
+            "before": ["K"], "after": ["{"]
         },
 
         // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
