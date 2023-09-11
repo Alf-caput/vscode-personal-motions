@@ -285,56 +285,56 @@
         },
 
         // w to jump over words or sentences with hjkl motions
-        {
-            "before": ["w", "h"], "after": ["b"]
-        },
-        {
-            "before": ["w", "l"], "after": ["e"]
-        },
-        {
-            "before": ["w", "k"], "after": ["("]
-        },
-        {
-            "before": ["w", "j"], "after": [")"]
-        },
-        {
-            "before": ["w", "H"], "after": ["b"]
-        },
-        {
-            "before": ["w", "L"], "after": ["e"]
-        },
-        {
-            "before": ["w", "K"], "after": ["("]
-        },
-        {
-            "before": ["w", "J"], "after": [")"]
-        },
-        // W HJKL same behaviour but whitespace is word delimeter
-        // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
-        {
-            "before": ["W", "H"], "after": ["B"]
-        },
-        {
-            "before": ["W", "L"], "after": ["E"]
-        },
-        {
-            "before": ["W", "K"], "after": ["{"], 
-        },
-        {
-            "before": ["W", "J"], "after": ["}"]
-        },
-        {
-            "before": ["W", "h"], "after": ["B"]
-        },
-        {
-            "before": ["W", "l"], "after": ["E"]
-        },
-        {
-            "before": ["W", "k"], "after": ["{"], 
-        },
-        {
-            "before": ["W", "j"], "after": ["}"]
-        },
+        // {
+        //     "before": ["w", "h"], "after": ["b"]
+        // },
+        // {
+        //     "before": ["w", "l"], "after": ["e"]
+        // },
+        // {
+        //     "before": ["w", "k"], "after": ["("]
+        // },
+        // {
+        //     "before": ["w", "j"], "after": [")"]
+        // },
+        // {
+        //     "before": ["w", "H"], "after": ["b"]
+        // },
+        // {
+        //     "before": ["w", "L"], "after": ["e"]
+        // },
+        // {
+        //     "before": ["w", "K"], "after": ["("]
+        // },
+        // {
+        //     "before": ["w", "J"], "after": [")"]
+        // },
+        // // W HJKL same behaviour but whitespace is word delimeter
+        // // Note: W KJ jumps in paragraphs and vscode jump line differs from regular vim
+        // {
+        //     "before": ["W", "H"], "after": ["B"]
+        // },
+        // {
+        //     "before": ["W", "L"], "after": ["E"]
+        // },
+        // {
+        //     "before": ["W", "K"], "after": ["{"], 
+        // },
+        // {
+        //     "before": ["W", "J"], "after": ["}"]
+        // },
+        // {
+        //     "before": ["W", "h"], "after": ["B"]
+        // },
+        // {
+        //     "before": ["W", "l"], "after": ["E"]
+        // },
+        // {
+        //     "before": ["W", "k"], "after": ["{"], 
+        // },
+        // {
+        //     "before": ["W", "j"], "after": ["}"]
+        // },
         // Disable old w and W
         {
             "before": ["w"], "after": [""]
