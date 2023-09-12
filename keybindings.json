@@ -13,7 +13,7 @@
     {
         "key": "x",
         "command": "deleteFile",
-        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceMoveableToTrash && !explorerResourceReadonly && !inputFocus"
+        "when": "explorerViewletFocus"
     },
     {
         "key": "d",
@@ -68,11 +68,33 @@
     {
         "key": "a",
         "command": "explorer.newFile",
-        "when" : "sideBarFocus"
+        "when": "explorerViewletFocus"
     },
     {
-        "key": "A",
+        "key": "Shift+a",
         "command": "explorer.newFolder",
-        "when" : "sideBarFocus"
+        "when": "explorerViewletFocus"
     },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "activeViewlet == 'workbench.view.explorer' || activeViewlet == 'workbench.view.search'|| activeViewlet == 'workbench.view.scm'|| activeViewlet == 'workbench.view.debug'|| activeViewlet == 'workbench.view.extensions' || activeViewlet == 'workbench.view.extension.test'|| activeViewlet == 'workbench.view.extension.bookmarks'|| activeViewlet == 'workbench.view.extension.project-manager' || activeViewlet == 'workbench.view.extension.gitlens'|| activeViewlet == 'workbench.view.extension.todo-tree-container'|| activeViewlet == 'snippet-explorer'"
+    }
 ]

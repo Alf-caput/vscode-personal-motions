@@ -37,6 +37,7 @@
             "before" : ["<C-r>"], "commands" : ["redo"]
         },
 
+
         // █░█ █▀ █▀▀ █▀█ █▀▄ █▀▀   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
         // ▀▄▀ ▄█ █▄▄ █▄█ █▄▀ ██▄   █▄▄ █▄█ █░▀░█ █░▀░█ █▄█ █░▀█
 
@@ -243,6 +244,7 @@
         {
             "before": ["x"], "after": ["l"]
         },
+        // This indent level (plugin vim-indent-object)
         {
             "before": ["X"], "after": ["i", "i"]
         },
