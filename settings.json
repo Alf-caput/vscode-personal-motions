@@ -637,5 +637,7 @@
             "before" : ["Ñ"], "after" : ["<Esc>"]
         },
     ],
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "vscode-icons"
 }
