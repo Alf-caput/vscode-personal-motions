@@ -89,12 +89,22 @@
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "e",
+        "key": "Ctrl+e",
         "command": "workbench.view.explorer"
     },
     {
-        "key": "e",
+        "key": "Ctrl+e",
         "command": "workbench.action.toggleSidebarVisibility",
         "when": "activeViewlet == 'workbench.view.explorer' || activeViewlet == 'workbench.view.search'|| activeViewlet == 'workbench.view.scm'|| activeViewlet == 'workbench.view.debug'|| activeViewlet == 'workbench.view.extensions' || activeViewlet == 'workbench.view.extension.test'|| activeViewlet == 'workbench.view.extension.bookmarks'|| activeViewlet == 'workbench.view.extension.project-manager' || activeViewlet == 'workbench.view.extension.gitlens'|| activeViewlet == 'workbench.view.extension.todo-tree-container'|| activeViewlet == 'snippet-explorer'"
-    }
+    },
+    {
+        "key": "tab+j",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "!editorTextFocus"
+    },
+    {
+        "key": "tab+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "!editorTextFocus"
+    },
 ]
