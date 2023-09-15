@@ -13,7 +13,7 @@
     {
         "key": "x",
         "command": "deleteFile",
-        "when": "explorerViewletFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
     },
     {
         "key": "d",
@@ -68,12 +68,12 @@
     {
         "key": "a",
         "command": "explorer.newFile",
-        "when": "explorerViewletFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
     },
     {
         "key": "Shift+a",
         "command": "explorer.newFolder",
-        "when": "explorerViewletFocus"
+        "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
     },
     {
         "key": "ctrl+e",
