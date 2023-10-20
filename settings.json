@@ -16,7 +16,7 @@
 
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
-    "editor.wordSeparators": "~!@#$%^&*()-=+{}|;:'\",.<>/?",
+    "editor.wordSeparators": "[]~!@#$%^&*()-=+{}|;:'\",.<>/?",
 
     // ███╗░░██╗░█████╗░██████╗░███╗░░░███╗░█████╗░██╗░░░░░
     // ████╗░██║██╔══██╗██╔══██╗████╗░████║██╔══██╗██║░░░░░
@@ -79,6 +79,13 @@
         },
         {
             "before": ["C"], "after": ["c", "c"]
+        },
+        // Remove old dd and cc
+        {
+            "before": ["d", "d"], "after": [""]
+        },
+        {
+            "before": ["c", "c"], "after": [""]
         },
 
         // █░█ █ █▀▄▀█   █▀▀ █▀█ █▀▄▀█ █▀▄▀█ █▀█ █▄░█
@@ -638,6 +645,9 @@
         },
     ],
     "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "workbench.activityBar.visible": false,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": -2,
+    "python.terminal.executeInFileDir": true,
+    "workbench.activityBar.visible": false
 }
