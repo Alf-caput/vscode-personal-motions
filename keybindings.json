@@ -101,19 +101,6 @@
     
 // █▄▀ ▄▀█ █▄▀ █▀█ █░█ █▄░█ █▀▀
 // █░█ █▀█ █░█ █▄█ █▄█ █░▀█ ██▄
-    // {
-    //     "text": "(surround)",
-    //     "key": "shift+9", // spanish "("
-    //     "command": "dance.run",
-    //     "args": {
-    //         "input": "await replace((x) => '(' + x + ')')",
-    //         "commands": [
-    //             [".edit.insert", { "where": "start", "shift": "extend", "text": "(" }],
-    //             [".edit.insert", { "where": "end", "shift": "extend", "text": ")" }],
-    //         ],
-    //     }
-    // },
-
     {
         "key": "i",
         "command": "dance.run",
