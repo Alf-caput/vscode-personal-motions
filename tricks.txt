@@ -1,2 +1,0 @@
-useful argument for command code (In the terminal):
-"code -r" will reuse an existing vscode window
