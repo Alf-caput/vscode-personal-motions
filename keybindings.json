@@ -235,6 +235,14 @@
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
 
+    
+    // " Not all registers work, for now use ñ and o
+    {
+        "key": "shift+alt+2",
+        "command": "dance.selectRegister",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
 
     // Y
     {
@@ -242,7 +250,17 @@
         "command": "dance.selections.saveText",
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
-
+    {
+        "key": "shift+y",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.selections.saveText"]
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
 
     // P
     {
@@ -263,6 +281,60 @@
         "command": "dance.edit.yank-delete",
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
+    {
+        "key": "shift+d",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.yank-delete"]
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+    // C
+    {
+        "key": "c",
+        "command": "dance.edit.yank-delete-insert",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "shift+c",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.yank-delete-insert"]
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+
+    // R Best option to replace with default register use delete with back then paste
+    {
+        "key": "r",
+        "command": "dance.edit.selectRegister-insert",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "shift+r",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.selectRegister-insert"]
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+
+
+
+
+
 
 
     {
@@ -284,5 +356,5 @@
         "key": "alt+oem_1",
         "command": "-dance.selections.changeDirection",
         "when": "editorTextFocus && dance.mode == 'normal'"
-    },
+    }
 ]
