@@ -103,22 +103,27 @@
 // █░█ █▀█ █░█ █▄█ █▄█ █░▀█ ██▄
     {
         "key": "i",
-        "command": "dance.run",
-        "args": {
-            "commands": [
-                ["dance.selections.reduce"],
-                ["dance.modes.set.insert"],
-            ]
-        },
-        "when": "editorTextFocus && dance.mode == NORMAL"
+        "command":"dance.modes.insert.before" ,
+        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
+    },
+    {
+        "key": "a",
+        "command":"dance.modes.insert.after" ,
+        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
     },
     {
         "key": "shift+oem_3",
         "command": "dance.modes.set",
         "args": {"input": "NORMAL"},
-        "when": "editorTextFocus && dance.mode != NORMAL"
+        "when": "editorTextFocus && (dance.mode == normal || dance.mode == insert)"
+    },
+    {
+        "key": "shift+oem_3",
+        "command": "dance.modes.set.normal",
+        "when": "editorTextFocus && dance.mode != normal"
     },
 
+    
     // L
     {
         "key": "l",
@@ -140,6 +145,7 @@
         "command": "dance.seek.wordEnd.ws.extend",
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
+
 
     // H
     {
@@ -163,10 +169,10 @@
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
 
-    // J
+
     {
         "key": "j",
-        "command": "dance.select.line.below",
+        "command": "dance.select.down.jump",
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
     {
@@ -186,11 +192,12 @@
         "args": {"input": "(?#predefined=paragraph)", "where": "end", "shift": "extend"},
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
+
     
     // K
     {
         "key": "k",
-        "command": "dance.select.line.above",
+        "command": "dance.select.up.jump",
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
     {
@@ -209,5 +216,25 @@
         "command": "dance.seek.object",
         "args": {"input": "(?#predefined=paragraph)", "where": "start", "shift": "extend"},
         "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "ctrl+alt+oem_3",
+        "command": "dance.edit.case.swap",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "alt+oem_3",
+        "command": "-dance.edit.case.swap",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "alt+oem_3",
+        "command": "dance.selections.changeDirection",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "alt+oem_1",
+        "command": "-dance.selections.changeDirection",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
 ]
