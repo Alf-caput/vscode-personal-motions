@@ -99,18 +99,8 @@
         "when": "!editorTextFocus"
     },
     
-// █▄▀ ▄▀█ █▄▀ █▀█ █░█ █▄░█ █▀▀
-// █░█ █▀█ █░█ █▄█ █▄█ █░▀█ ██▄
-    {
-        "key": "i",
-        "command":"dance.modes.insert.before" ,
-        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
-    },
-    {
-        "key": "a",
-        "command":"dance.modes.insert.after" ,
-        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
-    },
+    // █▄▀ ▄▀█ █▄▀ █▀█ █░█ █▄░█ █▀▀
+    // █░█ █▀█ █░█ █▄█ █▄█ █░▀█ ██▄
     {
         "key": "shift+oem_3",
         "command": "dance.modes.set",
@@ -122,31 +112,34 @@
         "command": "dance.modes.set.normal",
         "when": "editorTextFocus && dance.mode != normal"
     },
-
     
-    // L
-    {
-        "key": "l",
-        "command": "dance.seek.wordEnd",
-        "when": "editorTextFocus && dance.mode == NORMAL"
-    },
-    {
-        "key": "shift+l",
-        "command": "dance.seek.wordEnd.ws",
-        "when": "editorTextFocus && dance.mode == NORMAL"
-    },
-    {
-        "key": "alt+l",
-        "command": "dance.seek.wordEnd.extend",
-        "when": "editorTextFocus && dance.mode == NORMAL"
-    },
-    {
-        "key": "alt+shift+l",
-        "command": "dance.seek.wordEnd.ws.extend",
-        "when": "editorTextFocus && dance.mode == NORMAL"
-    },
 
+    // I
+    {
+        "key": "i",
+        "command":"dance.modes.insert.before" ,
+        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
+    },
+    {
+        "key": "shift+i",
+        "command": "dance.modes.insert.lineStart",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    
 
+    // A
+    {
+        "key": "a",
+        "command":"dance.modes.insert.after" ,
+        "when": "editorTextFocus && dance.mode != disabled && dance.mode != insert"
+    },
+    {
+        "key": "shift+a",
+        "command": "dance.modes.insert.lineEnd",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    
+    
     // H
     {
         "key": "h",
@@ -170,6 +163,30 @@
     },
 
 
+    // L
+    {
+        "key": "l",
+        "command": "dance.seek.wordEnd",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.seek.wordEnd.ws",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+l",
+        "command": "dance.seek.wordEnd.extend",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+shift+l",
+        "command": "dance.seek.wordEnd.ws.extend",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    
+
+    // J
     {
         "key": "j",
         "command": "dance.select.down.jump",
@@ -217,6 +234,37 @@
         "args": {"input": "(?#predefined=paragraph)", "where": "start", "shift": "extend"},
         "when": "editorTextFocus && dance.mode == NORMAL"
     },
+
+
+    // Y
+    {
+        "key": "y",
+        "command": "dance.selections.saveText",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+
+    // P
+    {
+        "key": "p",
+        "command": "dance.edit.paste.after.select",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "shift+p",
+        "command": "dance.edit.paste.before.select",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+
+    // D
+    {
+        "key": "d",
+        "command": "dance.edit.yank-delete",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+
     {
         "key": "ctrl+alt+oem_3",
         "command": "dance.edit.case.swap",

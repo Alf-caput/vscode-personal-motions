@@ -68,8 +68,8 @@
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
-    "window.zoomLevel": -2,
     "python.terminal.executeInFileDir": true,
     "workbench.activityBar.visible": false,
     "vsicons.dontShowNewVersionMessage": true,
+    "window.zoomLevel": -1,
 }
