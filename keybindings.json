@@ -112,7 +112,18 @@
         "command": "dance.modes.set.normal",
         "when": "editorTextFocus && dance.mode != normal"
     },
-    
+    {
+        "key": "space",
+        // "command": "dance.selections.expandToLines",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                [".selections.expandToLines"],
+                [".selections.changeDirection"]
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == 'NORMAL'"
+    },
 
     // I
     {
