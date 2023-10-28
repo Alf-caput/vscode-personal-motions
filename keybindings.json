@@ -371,6 +371,75 @@
                 ["dance.selections.restore"]
             ]
         },
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+    
+    // P
+    {
+        "key": "p",
+        "command": "dance.edit.paste.after.select",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+p",
+        "command": "dance.edit.paste.before.select",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+
+    // D
+    {
+        "key": "d",
+        "command": "dance.edit.yank-delete",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+d",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.yank-delete"],
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+
+    // R
+    {
+        "key": "r",
+        "command": "dance.edit.yank-replace",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+r",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.yank-replace"],
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+    // C
+    {
+        "key": "c",
+        "command": "dance.edit.yank-delete-insert",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+w",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.select.line.above.extend"],
+                ["dance.edit.yank-delete-insert"],
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
 ]
