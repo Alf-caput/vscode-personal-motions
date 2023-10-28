@@ -316,4 +316,52 @@
         "args": {"input": "(?#predefined=paragraph)", "where": "start", "shift": "extend"},
         "when": "editorTextFocus && dance.mode == LINE"
     },
+
+
+    // I
+    {
+        "key": "i",
+        "command":"dance.modes.insert.before" ,
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "i",
+        "command": "dance.modes.insert.lineStart",
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+i",
+        "command": "dance.seek.askObject.inner",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+i",
+        "command": "dance.modes.insert.lineStart",
+        "args": {"skipBlank": true},
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+    },
+
+
+    // A
+    {
+        "key": "a",
+        "command":"dance.modes.insert.after" ,
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "a",
+        "command": "dance.modes.insert.lineEnd",
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+a",
+        "command": "dance.seek.askObject",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+a",
+        "command": "dance.modes.insert.lineEnd",
+        "args": {"skipBlank": true},
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+    },
 ]
