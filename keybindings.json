@@ -98,4 +98,98 @@
         "command": "workbench.action.quickOpenNavigatePrevious",
         "when": "!editorTextFocus"
     },
+
+// ██╗░░██╗░█████╗░██╗░░██╗░█████╗░██╗░░░██╗███╗░░██╗███████╗
+// ██║░██╔╝██╔══██╗██║░██╔╝██╔══██╗██║░░░██║████╗░██║██╔════╝
+// █████═╝░███████║█████═╝░██║░░██║██║░░░██║██╔██╗██║█████╗░░
+// ██╔═██╗░██╔══██║██╔═██╗░██║░░██║██║░░░██║██║╚████║██╔══╝░░
+// ██║░╚██╗██║░░██║██║░╚██╗╚█████╔╝╚██████╔╝██║░╚███║███████╗
+// ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═╝░░╚══╝╚══════╝
+    // Set mode
+    {
+        "key": "escape",
+        "command": "dance.modes.set.normal",
+        "when": "editorTextFocus && dance.mode != normal"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "dance.modes.set",
+        "args": {"input": "character"},
+        "when": "editorTextFocus && (dance.mode == word || dance.mode == WORD || dance.mode == normal)"
+    },
+    {
+        "key": "w",
+        "command": "dance.modes.set",
+        "args": {"input": "word"},
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+w",
+        "command": "dance.modes.set",
+        "args": {"input": "WORD"},
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word)"
+    },
+    // H
+    {
+        "key": "h",
+        "command": "dance.select.left.jump",
+        "when": "editorTextFocus && dance.mode == character"
+    },
+    {
+        "key": "h",
+        "command": "dance.seek.word.backward",
+        "when": "editorTextFocus && dance.mode == word"
+    },
+    {
+        "key": "h",
+        "command": "dance.seek.word.ws.backward",
+        "when": "editorTextFocus && dance.mode == WORD"
+    },
+    {
+        "key": "shift+h",
+        "command": "dance.select.left.extend",
+        "when": "editorTextFocus && dance.mode == character"
+    },
+    {
+        "key": "shift+h",
+        "command": "dance.seek.word.extend.backward",
+        "when": "editorTextFocus && dance.mode == word"
+    },
+    {
+        "key": "shift+h",
+        "command": "dance.seek.word.ws.extend.backward",
+        "when": "editorTextFocus && dance.mode == WORD"
+    },
+
+    // L
+    {
+        "key": "l",
+        "command": "dance.select.right.jump",
+        "when": "editorTextFocus && dance.mode == character"
+    },
+    {
+        "key": "l",
+        "command": "dance.seek.wordEnd",
+        "when": "editorTextFocus && dance.mode == word"
+    },
+    {
+        "key": "l",
+        "command": "dance.seek.wordEnd.ws",
+        "when": "editorTextFocus && dance.mode == WORD"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.select.right.extend",
+        "when": "editorTextFocus && dance.mode == character"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.seek.wordEnd.extend",
+        "when": "editorTextFocus && dance.mode == word"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.seek.wordEnd.ws.extend",
+        "when": "editorTextFocus && dance.mode == word"
+    },
 ]

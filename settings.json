@@ -644,6 +644,67 @@
             "before" : ["Ñ"], "after" : ["<Esc>"]
         },
     ],
+
+
+// ██╗░░██╗░█████╗░██╗░░██╗░█████╗░██╗░░░██╗███╗░░██╗███████╗
+// ██║░██╔╝██╔══██╗██║░██╔╝██╔══██╗██║░░░██║████╗░██║██╔════╝
+// █████═╝░███████║█████═╝░██║░░██║██║░░░██║██╔██╗██║█████╗░░
+// ██╔═██╗░██╔══██║██╔═██╗░██║░░██║██║░░░██║██║╚████║██╔══╝░░
+// ██║░╚██╗██║░░██║██║░╚██╗╚█████╔╝╚██████╔╝██║░╚███║███████╗
+// ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═╝░░╚══╝╚══════╝
+    "dance.modes": {
+        "character": {
+            "cursorStyle": "block",
+            "selectionBehavior": "character",
+            "lineNumbers": "relative",
+            "decorations": {
+                "applyTo": "main",
+                "backgroundColor": "$editor.hoverHighlightBackground",
+                "isWholeLine": true
+            },
+            "onEnterMode": [
+                [".selections.restore", {"register": " ^", "try": true}]
+            ],
+            "onLeaveMode": [
+                [".selections.save", {"register": " ^"}]
+            ]
+        },
+        "word": {
+            "cursorStyle": "line-thin",
+            "lineNumbers": "relative",
+            "decorations": {
+                "applyTo": "main",
+                "backgroundColor": "$editor.hoverHighlightBackground",
+                "isWholeLine": true
+            },
+            "onEnterMode": [
+                [".selections.restore", {"register": " ^", "try": true}]
+            ],
+            "onLeaveMode": [
+                [".selections.save", {"register": " ^"}]
+            ]
+        },
+        "WORD": {
+            "cursorStyle": "line",
+            "lineNumbers": "relative",
+            "decorations": {
+                "applyTo": "main",
+                "backgroundColor": "$editor.hoverHighlightBackground",
+                "isWholeLine": true
+            },
+            "onEnterMode": [
+                [".selections.restore", {"register": " ^", "try": true}]
+            ],
+            "onLeaveMode": [
+                [".selections.save", {"register": " ^"}]
+            ]
+        },
+    },
+    "dance.defaultMode": "normal",
+
+
+
+
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
