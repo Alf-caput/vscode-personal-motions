@@ -432,7 +432,7 @@
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
-        "key": "shift+w",
+        "key": "shift+c",
         "command": "dance.run",
         "args": {
            "commands": [
