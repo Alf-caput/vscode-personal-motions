@@ -115,7 +115,7 @@
         "key": "ctrl+c",
         "command": "dance.modes.set",
         "args": {"input": "character"},
-        "when": "editorTextFocus && (dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE || dance.mode == normal)"
+        "when": "editorTextFocus && (dance.mode == insert || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE || dance.mode == normal)"
     },
     {
         "key": "w",
@@ -238,9 +238,19 @@
     {
         "key": "j",
         "command": "dance.select.down.jump",
-        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
-    //TODO j-line
+    {
+        "key": "j",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.down.jump"],
+                ["dance.select.line.below.extend"],
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == line"
+    },
     {
         "key": "j",
         "command": "dance.seek.object",
@@ -251,7 +261,7 @@
     {
         "key": "shift+j",
         "command": "dance.select.down.extend",
-        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
     {
         "key": "shift+j",
@@ -270,9 +280,19 @@
     {
         "key": "k",
         "command": "dance.select.up.jump",
-        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
-    //TODO k-line
+    {
+        "key": "k",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                ["dance.select.up.jump"],
+                ["dance.select.line.above"],
+            ]
+        },
+        "when": "editorTextFocus && dance.mode == line"
+    },
     {
         "key": "k",
         "command": "dance.seek.object",
@@ -283,7 +303,7 @@
     {
         "key": "shift+k",
         "command": "dance.select.up.extend",
-        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
     {
         "key": "shift+k",
