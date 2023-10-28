@@ -109,7 +109,7 @@
     {
         "key": "escape",
         "command": "dance.modes.set.normal",
-        "when": "editorTextFocus && dance.mode != normal"
+        "when": "editorTextFocus && (dance.mode != normal && !vim.active)"
     },
     {
         "key": "ctrl+c",
@@ -191,5 +191,64 @@
         "key": "shift+l",
         "command": "dance.seek.wordEnd.ws.extend",
         "when": "editorTextFocus && dance.mode == word"
+    },
+    
+    // J
+    {
+        "key": "j",
+        "command": "dance.select.down.jump",
+        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+j",
+        "command": "dance.select.down.extend",
+        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+j",
+        "command": "dance.seek.object",
+        "args": {"input": "(?#predefined=paragraph)", "where": "end"},
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+j",
+        "command": "dance.select.line.below.extend",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+shift+j",
+        "command": "dance.seek.object",
+        "args": {"input": "(?#predefined=paragraph)", "where": "end", "shift": "extend"},
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+
+    
+    // K
+    {
+        "key": "k",
+        "command": "dance.select.up.jump",
+        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+k",
+        "command": "dance.select.up.extend",
+        "when": "editorTextFocus && (dance.mode == character  || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+k",
+        "command": "dance.seek.object",
+        "args": {"input": "(?#predefined=paragraph)", "where": "start"},
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+k",
+        "command": "dance.select.line.above.extend",
+        "when": "editorTextFocus && dance.mode == NORMAL"
+    },
+    {
+        "key": "alt+shift+k",
+        "command": "dance.seek.object",
+        "args": {"input": "(?#predefined=paragraph)", "where": "start", "shift": "extend"},
+        "when": "editorTextFocus && dance.mode == NORMAL"
     },
 ]
