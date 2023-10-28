@@ -224,7 +224,7 @@
     {
         "key": "shift+l",
         "command": "dance.seek.wordEnd.ws.extend",
-        "when": "editorTextFocus && dance.mode == word"
+        "when": "editorTextFocus && dance.mode == WORD"
     },
     {
         "key": "shift+l",
@@ -332,13 +332,7 @@
     {
         "key": "shift+i",
         "command": "dance.seek.askObject.inner",
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
-    },
-    {
-        "key": "shift+i",
-        "command": "dance.modes.insert.lineStart",
-        "args": {"skipBlank": true},
-        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
 
 
@@ -356,12 +350,27 @@
     {
         "key": "shift+a",
         "command": "dance.seek.askObject",
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+
+    // Y
+    {
+        "key": "y",
+        "command": "dance.selections.saveText",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
-        "key": "shift+a",
-        "command": "dance.modes.insert.lineEnd",
-        "args": {"skipBlank": true},
-        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
+        "key": "shift+y",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.selections.save"],
+                ["dance.select.line.above.extend"],
+                ["dance.selections.saveText"],
+                ["dance.selections.restore"]
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
 ]

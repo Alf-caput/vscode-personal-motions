@@ -654,8 +654,7 @@
 // ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═╝░░╚══╝╚══════╝
     "dance.modes": {
         "character": {
-            "cursorStyle": "block-outline",
-            "selectionBehavior": "character",
+            "cursorStyle": "line",
             "lineNumbers": "relative",
             "decorations": {
                 "applyTo": "main",
@@ -685,7 +684,7 @@
             ]
         },
         "WORD": {
-            "cursorStyle": "line",
+            "cursorStyle": "line-thin",
             "lineNumbers": "relative",
             "decorations": {
                 "applyTo": "main",
