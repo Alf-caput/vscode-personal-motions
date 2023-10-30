@@ -654,8 +654,9 @@
 // ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═╝░░╚══╝╚══════╝
     "dance.modes": {
         "character": {
-            "cursorStyle": "line",
+            "cursorStyle": "block",
             "lineNumbers": "relative",
+            "selectionBehavior": "character",
             "decorations": {
                 "applyTo": "main",
                 "backgroundColor": "$editor.hoverHighlightBackground",
@@ -731,7 +732,7 @@
             ]
         },
     },
-    "dance.defaultMode": "normal",
+    "dance.defaultMode": "word",
 
 
 
