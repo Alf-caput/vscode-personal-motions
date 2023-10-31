@@ -172,7 +172,7 @@
     },
     {
         "key": "h",
-        "command": "dance.select.lineStart.extend",
+        "command": "dance.select.lineStart",
         "args": {"skipBlank": true},
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
@@ -194,7 +194,7 @@
     },
     {
         "key": "shift+h",
-        "command": "dance.select.lineStart.extend",
+        "command": "dance.select.lineStart",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
 
@@ -217,7 +217,7 @@
     },
     {
         "key": "l",
-        "command": "dance.select.lineEnd.extend",
+        "command": "dance.select.lineEnd",
         "args": {"skipBlank": true},
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
@@ -239,8 +239,7 @@
     },
     {
         "key": "shift+l",
-        "command": "dance.select.lineEnd.extend",
-        "args": {"skipBlank": true},
+        "command": "dance.select.lineEnd",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
    
@@ -300,7 +299,6 @@
             "commands": [
                 ["dance.select.up.jump"],
                 ["dance.selections.expandToLines"],
-                ["dance.select.lineStart"],
             ]
         },
         "when": "editorTextFocus && dance.mode == line"
