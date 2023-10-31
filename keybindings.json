@@ -172,7 +172,7 @@
     },
     {
         "key": "h",
-        "command": "dance.select.lineStart",
+        "command": "dance.select.lineStart.extend",
         "args": {"skipBlank": true},
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
@@ -194,7 +194,7 @@
     },
     {
         "key": "shift+h",
-        "command": "dance.select.lineStart",
+        "command": "dance.select.lineStart.extend",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
 
@@ -217,7 +217,7 @@
     },
     {
         "key": "l",
-        "command": "dance.select.lineEnd",
+        "command": "dance.select.lineEnd.extend",
         "args": {"skipBlank": true},
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
@@ -239,7 +239,7 @@
     },
     {
         "key": "shift+l",
-        "command": "dance.select.lineEnd",
+        "command": "dance.select.lineEnd.extend",
         "args": {"skipBlank": true},
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
@@ -400,7 +400,7 @@
         "args": {
            "commands": [
                 ["dance.selections.save"],
-                ["dance.select.line.above.extend"],
+                ["dance.selections.expandToLines"],
                 ["dance.selections.saveText"],
                 ["dance.selections.restore"]
             ]
@@ -433,7 +433,7 @@
         "command": "dance.run",
         "args": {
            "commands": [
-                ["dance.select.line.above.extend"],
+                ["dance.selections.expandToLines"],
                 ["dance.edit.yank-delete"],
             ]
         },
@@ -452,7 +452,7 @@
         "command": "dance.run",
         "args": {
            "commands": [
-                ["dance.select.line.above.extend"],
+                ["dance.selections.expandToLines"],
                 ["dance.edit.yank-replace"],
             ]
         },
@@ -470,7 +470,7 @@
         "command": "dance.run",
         "args": {
            "commands": [
-                ["dance.select.line.above.extend"],
+                ["dance.selections.expandToLines"],
                 ["dance.edit.yank-delete-insert"],
             ]
         },
