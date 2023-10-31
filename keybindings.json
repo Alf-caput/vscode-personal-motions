@@ -120,7 +120,7 @@
     {
         "key": "ctrl+c",
         "command": "toggleVim",
-        "when": "editorTextFocus && (vim.active || vim.mode == Insert)"
+        "when": "editorTextFocus && (vim.active || vim.mode == Insert || vim.mode == Visual || vim.mode == Normal)"
     },
     {
         "key": "ctrl+c",
@@ -257,7 +257,7 @@
         "args": {
             "commands": [
                 ["dance.select.down.jump"],
-                ["dance.select.line.below.extend"],
+                ["dance.selections.expandToLines"],
             ]
         },
         "when": "editorTextFocus && dance.mode == line"
@@ -299,7 +299,8 @@
         "args": {
             "commands": [
                 ["dance.select.up.jump"],
-                ["dance.select.line.above"],
+                ["dance.selections.expandToLines"],
+                ["dance.select.lineStart"],
             ]
         },
         "when": "editorTextFocus && dance.mode == line"
@@ -342,8 +343,19 @@
     },
     {
         "key": "shift+i",
-        "command": "dance.seek.askObject.inner",
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+        "command": "dance.modes.insert.lineStart",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+i",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.edit.newLine.above"],
+                ["dance.select.up.jump"],
+            ],
+        },
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
 
 
@@ -360,8 +372,19 @@
     },
     {
         "key": "shift+a",
-        "command": "dance.seek.askObject",
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+        "command": "dance.modes.insert.lineEnd",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
+    },
+    {
+        "key": "shift+a",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.edit.newLine.below"],
+                ["dance.select.down.jump"],
+            ],
+        },
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
 
 
@@ -453,5 +476,8 @@
         },
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
+
+
+
 
 ]
