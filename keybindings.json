@@ -194,7 +194,7 @@
     },
     {
         "key": "shift+h",
-        "command": "dance.select.lineStart",
+        "command": "dance.select.lineStart.extend",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
 
@@ -239,7 +239,7 @@
     },
     {
         "key": "shift+l",
-        "command": "dance.select.lineEnd",
+        "command": "dance.select.lineEnd.extend",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
    
