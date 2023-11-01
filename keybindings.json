@@ -534,13 +534,13 @@
                         "command": "dance.seek.enclosing"
                     },
                     "d": {
-                        "text": "delete surround",
+                        "text": "delete and select surround",
                         "command": "dance.run",
                         "args": {
                             "input": "await replace((x) => x.slice(1, -1))",
                             "commands": [
-                                ".selections.save",
                                 "dance.seek.askObject",
+                                ".selections.save",
                                 ".selections.reduce.edges",
                                 ".edit.delete",
                                 ".selections.restore",
