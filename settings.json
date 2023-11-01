@@ -653,6 +653,12 @@
 // ██║░╚██╗██║░░██║██║░╚██╗╚█████╔╝╚██████╔╝██║░╚███║███████╗
 // ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░╚═════╝░╚═╝░░╚══╝╚══════╝
     "dance.modes": {
+        "insert": {
+            "cursorStyle": "line-thin",
+            "onLeaveMode": [
+              [".selections.save", {"register": " ^" }]
+            ]
+        },
         "character": {
             "cursorStyle": "block",
             "lineNumbers": "relative",
@@ -700,8 +706,8 @@
             ]
         },
         "line": {
-            "cursorStyle": "block",
             "selectionBehavior": "character",
+            "cursorStyle": "block",
             "lineNumbers": "relative",
             "decorations": {
                 "applyTo": "main",
@@ -716,8 +722,8 @@
             ]
         },
         "LINE": {
-            "cursorStyle": "block",
             "selectionBehavior": "character",
+            "cursorStyle": "block",
             "lineNumbers": "relative",
             "decorations": {
                 "applyTo": "main",
@@ -745,4 +751,5 @@
     "workbench.activityBar.visible": false,
     "vsicons.dontShowNewVersionMessage": true,
     "code-runner.runInTerminal": true,
+    "editor.suggest.insertMode": "replace",
 }

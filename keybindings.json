@@ -115,7 +115,7 @@
         "key": "ctrl+c",
         "command": "dance.modes.set",
         "args": {"input": "character"},
-        "when": "editorTextFocus && (dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE || dance.mode == normal)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE || dance.mode == normal)"
     },
     {
         "key": "ctrl+c",
@@ -132,25 +132,25 @@
         "key": "w",
         "command": "dance.modes.set",
         "args": {"input": "word"},
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
         "key": "shift+w",
         "command": "dance.modes.set",
         "args": {"input": "WORD"},
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == line || dance.mode == LINE)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD|| dance.mode == line || dance.mode == LINE)"
     },
     {
         "key": "x",
         "command": "dance.modes.set",
         "args": {"input": "line"},
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == LINE)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
         "key": "shift+x",
         "command": "dance.modes.set",
         "args": {"input": "LINE"},
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
 
 
@@ -442,7 +442,13 @@
     // R
     {
         "key": "r",
-        "command": "dance.edit.yank-replace",
+        "command": "dance.run",
+        "args": {
+           "commands": [
+                ["dance.edit.yank-replace"],
+                ["dance.selections.saveText"],
+            ]
+        },
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
@@ -452,6 +458,7 @@
            "commands": [
                 ["dance.selections.expandToLines"],
                 ["dance.edit.yank-replace"],
+                ["dance.selections.saveText"],
             ]
         },
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
@@ -469,13 +476,79 @@
         "args": {
            "commands": [
                 ["dance.selections.expandToLines"],
-                ["dance.edit.yank-delete-insert"],
+                ["dance.edit.yank-delete"],
+                ["dance.edit.newLine.above.insert"],
             ]
         },
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
 
 
+    // O
+    {
+        "key": "o",
+        "command": "dance.edit.newLine.below.insert",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+o",
+        "command": "dance.edit.newLine.above.insert",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
 
 
+    // U
+    {
+        "key": "u",
+        "command": "runCommands",
+        "args": {
+            "commands": ["dance.history.undo", "removeSecondaryCursors"]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "shift+u",
+        "command": "dance.history.redo",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+
+    // S
+    {
+        "key": "s",
+        "command": "dance.openMenu",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)",
+        "args": {
+            "menu": {
+                "items": {
+                    "i": {
+                        "text": "select inside",
+                        "command": "dance.seek.askObject.inner",
+                    },
+                    "a": {
+                        "text": "select around",
+                        "command": "dance.seek.askObject",
+                    },
+                    "s": {
+                        "text": "goto matching bracket",
+                        "command": "dance.seek.enclosing"
+                    },
+                    "d": {
+                        "text": "delete surround",
+                        "command": "dance.run",
+                        "args": {
+                            "input": "await replace((x) => x.slice(1, -1))",
+                            "commands": [
+                                ".selections.save",
+                                "dance.seek.askObject",
+                                ".selections.reduce.edges",
+                                ".edit.delete",
+                                ".selections.restore",
+                            ],
+                        }
+                    }
+                }
+            }
+        }
+    },
 ]
