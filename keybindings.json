@@ -546,11 +546,27 @@
     },
     {
         "key": "g k",
+        "command": "runCommands",
+        "args": {
+            "commands": ["dance.selections.reduce", "cursorTopSelect"]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g shift+k",
         "command": "cursorTopSelect",
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
     {
         "key": "g j",
+        "command": "runCommands",
+        "args": {
+            "commands": ["dance.selections.reduce", "cursorBottomSelect"]
+        },
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g shift+j",
         "command": "cursorBottomSelect",
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
     },
