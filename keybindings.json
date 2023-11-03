@@ -242,8 +242,8 @@
         "command": "dance.select.lineEnd.extend",
         "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
-   
     
+
     // J
     {
         "key": "j",
@@ -513,6 +513,49 @@
     },
 
 
+    // G
+    {
+        "key": "g u",
+        "command": "dance.history.undo.selections",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g shift+u",
+        "command": "dance.history.redo.selections",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g l",
+        "command": "dance.select.lineEnd",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g shift+l",
+        "command": "dance.select.lineEnd.extend",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g h",
+        "command": "dance.select.lineStart",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g shift+h",
+        "command": "dance.select.lineStart.extend",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g k",
+        "command": "cursorTopSelect",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+    {
+        "key": "g j",
+        "command": "cursorBottomSelect",
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+    },
+
+
     // S
     {
         "key": "s",
@@ -531,7 +574,7 @@
                     },
                     "s": {
                         "text": "goto matching bracket",
-                        "command": "dance.seek.enclosing"
+                        "command": "editor.action.selectToBracket",
                     },
                     "d": {
                         "text": "delete and select surround",

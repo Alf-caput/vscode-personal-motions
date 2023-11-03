@@ -748,8 +748,8 @@
     "workbench.startupEditor": "none",
     "window.zoomLevel": -1,
     "python.terminal.executeInFileDir": true,
-    "workbench.activityBar.visible": false,
     "vsicons.dontShowNewVersionMessage": true,
     "code-runner.runInTerminal": true,
     "editor.suggest.insertMode": "replace",
+    "workbench.activityBar.location": "hidden",
 }
