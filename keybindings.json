@@ -440,38 +440,38 @@
     {
         "key": "d",
         "command": "dance.edit.yank-delete",
-        "when": "editorTextFocus && (dance.mode == character)"
+        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD)"
     },
-    {
-        "key": "d",
-        "command": "dance.run",
-        "args": {
-            "commands": [
-                {
-                    "command": "dance.edit.yank-delete"
-                },
-                {
-                    "command": "dance.seek.wordEnd"
-                }
-            ]
-        },
-        "when": "editorTextFocus && (dance.mode == word)"
-    },
-    {
-        "key": "d",
-        "command": "dance.run",
-        "args": {
-            "commands": [
-                {
-                    "command": "dance.edit.yank-delete"
-                },
-                {
-                    "command": "dance.seek.wordEnd.ws"
-                }
-            ]
-        },
-        "when": "editorTextFocus && (dance.mode == WORD)"
-    },
+    // {
+    //     "key": "d",
+    //     "command": "dance.run",
+    //     "args": {
+    //         "commands": [
+    //             {
+    //                 "command": "dance.edit.yank-delete"
+    //             },
+    //             {
+    //                 "command": "dance.seek.wordEnd"
+    //             }
+    //         ]
+    //     },
+    //     "when": "editorTextFocus && (dance.mode == word)"
+    // },
+    // {
+    //     "key": "d",
+    //     "command": "dance.run",
+    //     "args": {
+    //         "commands": [
+    //             {
+    //                 "command": "dance.edit.yank-delete"
+    //             },
+    //             {
+    //                 "command": "dance.seek.wordEnd.ws"
+    //             }
+    //         ]
+    //     },
+    //     "when": "editorTextFocus && (dance.mode == WORD)"
+    // },
     {
         "key": "d",
         "command": "dance.run",
@@ -492,8 +492,11 @@
         "command": "dance.run",
         "args": {
            "commands": [
+                ["dance.selections.save"],
+                ["dance.select.lineStart"],
                 ["dance.selections.expandToLines"],
                 ["dance.edit.yank-delete"],
+                ["dance.selections.restore"],
             ]
         },
         "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
