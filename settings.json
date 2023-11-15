@@ -746,10 +746,14 @@
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
     "workbench.iconTheme": "vscode-icons",
     "workbench.startupEditor": "none",
-    "window.zoomLevel": -1,
     "python.terminal.executeInFileDir": true,
     "vsicons.dontShowNewVersionMessage": true,
     "code-runner.runInTerminal": true,
     "editor.suggest.insertMode": "replace",
-    "workbench.activityBar.location": "hidden",
+    "files.exclude": {
+        "**/*.slxc": true
+    },
+    "editor.wordWrap": "on",
+    "vim.disableExtension": true,
+    "window.zoomLevel": 1,
 }
