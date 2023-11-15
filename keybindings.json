@@ -852,4 +852,9 @@
         "addDigits": 9
     }
     },
+    {
+        "key": "ctrl+c",
+        "command": "notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !editorHasSelection && !editorHoverVisible && dance.mode == 'character'"
+    }
 ]
