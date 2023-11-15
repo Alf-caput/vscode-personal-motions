@@ -309,8 +309,12 @@
         "command": "dance.run",
         "args": {
             "commands": [
-                ["dance.select.up.jump"],
-                ["dance.selections.expandToLines"],
+                {
+                    "command": "dance.select.up.jump",
+                },
+                {
+                    "command": "dance.selections.expandToLines"
+                },
             ]
         },
         "when": "editorTextFocus && dance.mode == line"
@@ -436,7 +440,52 @@
     {
         "key": "d",
         "command": "dance.edit.yank-delete",
-        "when": "editorTextFocus && (dance.mode == character || dance.mode == word || dance.mode == WORD || dance.mode == line || dance.mode == LINE)"
+        "when": "editorTextFocus && (dance.mode == character)"
+    },
+    {
+        "key": "d",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                {
+                    "command": "dance.edit.yank-delete"
+                },
+                {
+                    "command": "dance.seek.wordEnd"
+                }
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == word)"
+    },
+    {
+        "key": "d",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                {
+                    "command": "dance.edit.yank-delete"
+                },
+                {
+                    "command": "dance.seek.wordEnd.ws"
+                }
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == WORD)"
+    },
+    {
+        "key": "d",
+        "command": "dance.run",
+        "args": {
+            "commands": [
+                {
+                    "command": "dance.edit.yank-delete"
+                },
+                {
+                    "command": "dance.selections.expandToLines"
+                }
+            ]
+        },
+        "when": "editorTextFocus && (dance.mode == line || dance.mode == LINE)"
     },
     {
         "key": "shift+d",
