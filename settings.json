@@ -755,5 +755,9 @@
     },
     "editor.wordWrap": "on",
     "vim.disableExtension": true,
-    "window.zoomLevel": 1,
+    "[latex]": {
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix"
+    },
+    "workbench.activityBar.location": "hidden",
 }
