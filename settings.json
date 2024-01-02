@@ -760,4 +760,5 @@
         "editor.suggestSelection": "recentlyUsedByPrefix"
     },
     "workbench.activityBar.location": "hidden",
+    "window.zoomLevel": 2,
 }
